@@ -123,12 +123,6 @@ public class StartScreen extends BaseScreen
         this.mondLackDialog = new MondLackDialog(this);
         this.dialogSpeSold = new DialogSpeSold(this, this.mondLackDialog);
         this.dialogStore = new DialogStore(this);
-        
-//        Turtle.loadElements();
-//        Global.manager.finishLoading();
-//        Turtle t = new Turtle ();
-//        t.setPosition(0, 0);
-//        stage.addActor(t);
     }
     
     private void initFlag() {

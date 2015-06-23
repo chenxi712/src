@@ -179,18 +179,12 @@ public class Control
     }
     
     public static void levelClear() {
-    	Debug.log("levelClear 1");
         if (!Global.isEndlessMode) {
-        	Debug.log("levelClear 2");
             levelClearForNormal();
-            Debug.log("levelClear 3");
         }
         else {
-        	Debug.log("levelClear 4");
             levelClearForEndless1();
-            Debug.log("levelClear 5");
         }
-        Debug.log("levelClear 6");
         Global.createEnemyArrayState = 2;
     }
     
@@ -299,43 +293,27 @@ public class Control
         Global.arrBoxPos.clear();
         int n2 = 0;
         while (true) {
-        	Debug.log("levelClearForNormal 1");
             JsonValue value2 = value.get(n2);
-            Debug.log("levelClearForNormal 2");
             if (value2 == null) {
-            	Debug.log("levelClearForNormal 3");
                 break;
             }
-            Debug.log("levelClearForNormal 4");
             Constant.EnemyType value3 = Constant.EnemyType.valueOf(value2.getString("name").substring(4));
-            Debug.log("levelClearForNormal 5");
             BaseEnemy enemy = TypeHandle.createEnemy(value3);
-            Debug.log("levelClearForNormal 6");
             float float1 = value2.getFloat("x");
-            Debug.log("levelClearForNormal 7");
             float float2 = value2.getFloat("y");
-            Debug.log("levelClearForNormal 8");
             if (value3 == Constant.EnemyType.Flag) {
-            	Debug.log("levelClearForNormal 9");
                 Global.levelEndPosX = float1;
             }
             else if (isBoxType(value3)) {
-            	Debug.log("levelClearForNormal 10");
                 Global.arrBoxPos.add(float1);
             }
             else if (isBossType(value3)) {
-            	Debug.log("levelClearForNormal 11");
                 Global.arrBossPos.add(float1);
-                Debug.log("levelClearForNormal 12");
                 Global.arrBossType.add(value3);
             }
-            Debug.log("levelClearForNormal 13");
             enemy.setPosition(float1, float2);
-            Debug.log("levelClearForNormal 14");
             Global.arrEnemyCreate.add(enemy);
-            Debug.log("levelClearForNormal 15");
             Global.totalEnemy = Global.arrEnemyCreate.size - 1;
-            Debug.log("levelClearForNormal 16");
             ++n2;
         }
         Global.endlessHashState = 1;

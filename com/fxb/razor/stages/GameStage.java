@@ -890,6 +890,7 @@ public class GameStage extends Stage
                 if (Global.maxGameLevelEasy == 3) {
                     Global.totalCoinNum += 500.0f;
                 }
+                ++Global.maxGameLevelEasy;
 //                FlurryHandle.maxLevelEasy(++Global.maxGameLevelEasy);
             }
             PreferHandle.writeLevelStar(Global.curGameLevelEasy, Math.max(starNum, PreferHandle.readLevelStar(Global.curGameLevelEasy, Global.gameMode)), Global.gameMode);
@@ -897,6 +898,7 @@ public class GameStage extends Stage
         }
         else {
             if (Global.curGameLevelHard == Global.maxGameLevelHard) {
+            	++Global.maxGameLevelHard;
 //                FlurryHandle.maxLevelHard(++Global.maxGameLevelHard);
             }
             PreferHandle.writeLevelStar(Global.curGameLevelHard, Math.max(starNum, PreferHandle.readLevelStar(Global.curGameLevelHard, Global.gameMode)), Global.gameMode);

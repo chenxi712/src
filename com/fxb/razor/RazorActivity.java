@@ -18,15 +18,28 @@ import com.fxb.razor.utils.Debug;
 
 public class RazorActivity extends AndroidApplication
 {
+    private static final String FLURRY_ID = "MBBFSVGJRHC6B2P6P7HP";
+    private static final String[] SKU_ID;
+    private static final int[] SKU_NUM;
     private static RazorActivity activity;
     private static float avaliableMem;
     public static Runnable purchaseOkCallBack;
     private static long serverTime;
     String base64EncodedPublicKey;
 //    public final Handler billHandler;
-        
+//    private Goods[] goodsArray;
+//    private Store store;
+    
+    static {
+        SKU_ID = new String[] { "hint_10", "hint_30", "hint_80", "hint_200", "hint_600", "hint_1600" };
+        SKU_NUM = new int[] { 10, 30, 80, 200, 600, 1600 };
+    }
+    
     public RazorActivity() {
         this.base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5glSg4SbV+Na1GqspDCC0f1s5FP0WHrJGCXA0Gw8BWXWwXU+7xm62qroU404aJF0TkZSp1bsLQzocZAXxQtWXnWaNhahAuiigQ7DTKqwSG0je1e2L9bfpehbSbUbt6wHYOsKV0bSziyUdF66jQNZqwTmGfl0A1X/7a/tJ00qfzyw/8Z6wLABEzmOFnTXwhC442DfZwvhaHMunYCdxE5ngPacnQ2c9W0n6dVYRONE/WvgnvYS+x82i9zG4MElvfmayc6BUdZQzVefNUORuF7fowP/kPVwtiYccnBJEp9B7ZBlGYDpHwxejranL1eegyoN0vHPtIZyP+B76eetkXo3AQIDAQAB";
+//        this.goodsArray = new Goods[] { new HintGoods(this, RazorActivity.SKU_ID[0], RazorActivity.SKU_NUM[0], false), new HintGoods(this, RazorActivity.SKU_ID[1], RazorActivity.SKU_NUM[1], true), new HintGoods(this, RazorActivity.SKU_ID[2], RazorActivity.SKU_NUM[2], true), new HintGoods(this, RazorActivity.SKU_ID[3], RazorActivity.SKU_NUM[3], true), new HintGoods(this, RazorActivity.SKU_ID[4], RazorActivity.SKU_NUM[4], true), new HintGoods(this, RazorActivity.SKU_ID[5], RazorActivity.SKU_NUM[5], true) };
+//        this.store = new Store(this.base64EncodedPublicKey, this.goodsArray);
+//        this.billHandler = this.store.getBillingHandler();
     }
     
     public static void buyGoods(final int n) {
@@ -51,8 +64,6 @@ public class RazorActivity extends AndroidApplication
     }
     
     public static long getServerTime() {
-    	final Calendar instance = Calendar.getInstance();
-    	RazorActivity.serverTime = instance.getTimeInMillis();
         return RazorActivity.serverTime;
     }
     
@@ -65,8 +76,8 @@ public class RazorActivity extends AndroidApplication
     }
     
     public static boolean isShowingAd() {
-//        return Platform.isFullScreenSmallShowing();
     	return false;
+//        return Platform.isFullScreenSmallShowing();
     }
     
     public static void setServerTime(final long n) {
@@ -123,21 +134,27 @@ public class RazorActivity extends AndroidApplication
 //                Log.e("FullScreenCallBack", "FullScreen Closed!");
 //            }
 //        });
+//        this.store.onCreate(this);
         this.setAvaliableMem();
         final Hashtable<String, String> hashtable = new Hashtable<String, String>();
         hashtable.put("disable_advertising_id_check", "true");
+//        TapjoyConnect.requestTapjoyConnect(this.getApplicationContext(), "cf9dc8a5-651c-403f-b811-2c85efc2cfc9", "EPdJbLSURbmJ5LmYLjHA", hashtable);
         final AndroidApplicationConfiguration androidApplicationConfiguration = new AndroidApplicationConfiguration();
+        androidApplicationConfiguration.useGL20 = false;
         this.initialize(new MainGame(), androidApplicationConfiguration);
     }
     
     @Override
     protected void onDestroy() {
         super.onDestroy();
+//        Platform.onDestroy();
+//        this.store.onDestroy();
     }
     
     @Override
     protected void onPause() {
         super.onPause();
+//        Platform.onPause();
     }
     
     protected void onRestart() {
@@ -147,6 +164,13 @@ public class RazorActivity extends AndroidApplication
     @Override
     protected void onResume() {
         super.onResume();
+//        Platform.onResume();
+//        try {
+//            SponsorPay.start("47fcdaac18477cf3a6a6429b47577600", null, null, this);
+//        }
+//        catch (RuntimeException ex) {
+//            this.log("FYBER", ex.getLocalizedMessage());
+//        }
     }
     
     protected void onSaveInstanceState(final Bundle bundle) {
@@ -155,10 +179,13 @@ public class RazorActivity extends AndroidApplication
     
     protected void onStart() {
         super.onStart();
+//        FlurryAgent.onStartSession((Context)this, "MBBFSVGJRHC6B2P6P7HP");
     }
     
     protected void onStop() {
         super.onStop();
+//        FlurryAgent.onEndSession((Context)this);
+//        Platform.onStop();
     }
     
     public void onWindowFocusChanged(final boolean b) {
@@ -186,6 +213,44 @@ public class RazorActivity extends AndroidApplication
         activityManager.getMemoryInfo(activityManager$MemoryInfo);
         RazorActivity.avaliableMem = activityManager$MemoryInfo.availMem / 1024L / 1024L;
     }
+    
+//    public class HintGoods extends Goods
+//    {
+//        private boolean adFree;
+//        private int increment;
+//        private Activity mainActivity;
+//        
+//        public HintGoods(final Activity mainActivity, final String s, final int increment, final boolean adFree) {
+//            super(s);
+//            this.mainActivity = mainActivity;
+//            this.increment = increment;
+//            this.adFree = adFree;
+//        }
+//        
+//        private int findIndex(final int[] array, final int n) {
+//            for (int i = 0; i < array.length; ++i) {
+//                if (array[i] == n) {
+//                    return i;
+//                }
+//            }
+//            return -1;
+//        }
+//        
+//        @Override
+//        public final void onPurchaseSuccess() {
+//            Global.totalMondNum += this.increment;
+//            if (this.adFree) {
+//                Global.isAdFree = true;
+//                RazorActivity.closeFeatureView();
+//            }
+//            PreferHandle.writeCommon();
+//            FlurryHandle.buyMond(this.findIndex(RazorActivity.SKU_NUM, this.increment) + 1);
+//            if (RazorActivity.purchaseOkCallBack != null) {
+//                ((MainGame)((RazorActivity)this.mainActivity).getApplicationListener()).postTask(RazorActivity.purchaseOkCallBack);
+//                RazorActivity.purchaseOkCallBack = null;
+//            }
+//        }
+//    }
     
     public static void InitServerTime () {
         

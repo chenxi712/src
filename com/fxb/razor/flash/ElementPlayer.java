@@ -30,15 +30,21 @@ public class ElementPlayer
         this.flipX = false;
         this.flipY = false;
         this.element = element;
-        while (true) {
-            try {
-                this.textureRegion = new TextureRegion(textureAtlas.findRegion(element.textureName));
-                this.flashPlayer = flashPlayer;
-            }
-            catch (Exception ex) {
-                continue;
-            }
-            break;
+//        while (true) {
+//            try {
+//                this.textureRegion = new TextureRegion(textureAtlas.findRegion(element.textureName));
+//                this.flashPlayer = flashPlayer;
+//            }
+//            catch (Exception ex) {
+//                continue;
+//            }
+//            break;
+//        }
+        try {
+            this.textureRegion = new TextureRegion(textureAtlas.findRegion(element.textureName));
+            this.flashPlayer = flashPlayer;
+        }
+        catch (Exception ex) {
         }
     }
     

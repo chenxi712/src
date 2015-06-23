@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.audio.*;
 import com.fxb.razor.objects.subgun.*;
 import com.fxb.razor.roles.*;
+import com.fxb.razor.utils.Debug;
 
 public class Control
 {
@@ -41,12 +42,12 @@ public class Control
         Control.arrWave = new Array<Integer>();
     }
     
-    public static void addEndlessEnemy(final boolean b) {
+    public static void addEndlessEnemy(boolean b) {
         if (Global.endlessHashState > 1) {
             return;
         }
         Constant.EnemyType lastMove1 = null;
-        final boolean b2 = false;
+        boolean b2 = false;
         int n = 0;
         boolean b3;
         while (true) {
@@ -80,9 +81,9 @@ public class Control
         addForType(lastMove1, b3);
     }
     
-    public static void addForType(final Constant.EnemyType enemyType, final boolean b) {
+    public static void addForType(Constant.EnemyType enemyType, boolean b) {
         if (b) {
-            final BaseEnemy baseEnemy = Global.mapEnemy.get(enemyType).get(0);
+            BaseEnemy baseEnemy = Global.mapEnemy.get(enemyType).get(0);
             Global.mapEnemy.get(enemyType).removeIndex(0);
             baseEnemy.Clear();
             baseEnemy.setPosition(900.0f, 95.0f);
@@ -91,7 +92,7 @@ public class Control
     }
     
     public static void bossCall(int i) {
-        final JsonValue value = Global.manager.get("json/bosscall/boss_call.json", JsonValue.class).get(0).get(Global.curBossType.toString()).get("waves").get(i - 1);
+        JsonValue value = Global.manager.get("json/bosscall/boss_call.json", JsonValue.class).get(0).get(Global.curBossType.toString()).get("waves").get(i - 1);
         Control.arrWave.clear();
         for (i = 0; i < value.size; ++i) {
             Control.arrWave.add(value.get(i).asInt());
@@ -120,7 +121,7 @@ public class Control
             else {
                 enemyType = Control.typeBuild4[MathUtils.random(0, Control.typeBuild4.length - 1)];
             }
-            final Constant.EnemyType enemyType2 = enemyType;
+            Constant.EnemyType enemyType2 = enemyType;
             if (enemyType != Control.lastBuild1) {
                 return enemyType2;
             }
@@ -169,29 +170,35 @@ public class Control
         return enemyType;
     }
     
-    private static boolean isBossType(final Constant.EnemyType enemyType) {
+    private static boolean isBossType(Constant.EnemyType enemyType) {
         return enemyType == Constant.EnemyType.Bear1 || enemyType == Constant.EnemyType.Bear2 || enemyType == Constant.EnemyType.Wasp1 || enemyType == Constant.EnemyType.Wasp2 || enemyType == Constant.EnemyType.Rinocer1 || enemyType == Constant.EnemyType.Rinocer2 || enemyType == Constant.EnemyType.Dinosaur1 || enemyType == Constant.EnemyType.Dinosaur2 || enemyType == Constant.EnemyType.BDragon1 || enemyType == Constant.EnemyType.BDragon2;
     }
     
-    private static boolean isBoxType(final Constant.EnemyType enemyType) {
+    private static boolean isBoxType(Constant.EnemyType enemyType) {
         return enemyType == Constant.EnemyType.Box1 || enemyType == Constant.EnemyType.Box2 || enemyType == Constant.EnemyType.Box3;
     }
     
     public static void levelClear() {
+    	Debug.log("levelClear 1");
         if (!Global.isEndlessMode) {
+        	Debug.log("levelClear 2");
             levelClearForNormal();
+            Debug.log("levelClear 3");
         }
         else {
+        	Debug.log("levelClear 4");
             levelClearForEndless1();
+            Debug.log("levelClear 5");
         }
+        Debug.log("levelClear 6");
         Global.createEnemyArrayState = 2;
     }
     
     public static void levelClearForEndless1() {
         Global.mapEnemy.clear();
         for (int i = 0; i < Control.typeMove1.length; ++i) {
-            final Array<BaseEnemy> array = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType = Control.typeMove1[i];
+            Array<BaseEnemy> array = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType = Control.typeMove1[i];
             for (int j = 0; j < 12; ++j) {
                 array.add(TypeHandle.createEnemy(enemyType));
             }
@@ -206,16 +213,16 @@ public class Control
         }
         Global.mapEnemy.clear();
         for (int j = 0; j < Control.typeMove2.length; ++j) {
-            final Array<BaseEnemy> array = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType = Control.typeMove2[j];
+            Array<BaseEnemy> array = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType = Control.typeMove2[j];
             for (int k = 0; k < 8; ++k) {
                 array.add(TypeHandle.createEnemy(enemyType));
             }
             Global.mapEnemy.put(enemyType, array);
         }
         for (int l = 0; l < Control.typeBuild2.length; ++l) {
-            final Array<BaseEnemy> array2 = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType2 = Control.typeBuild2[l];
+            Array<BaseEnemy> array2 = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType2 = Control.typeBuild2[l];
             for (int n = 0; n < 4; ++n) {
                 array2.add(TypeHandle.createEnemy(enemyType2));
             }
@@ -233,16 +240,16 @@ public class Control
         }
         Global.mapEnemy.clear();
         for (int k = 0; k < Control.typeMove3.length; ++k) {
-            final Array<BaseEnemy> array = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType = Control.typeMove3[k];
+            Array<BaseEnemy> array = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType = Control.typeMove3[k];
             for (int l = 0; l < 8; ++l) {
                 array.add(TypeHandle.createEnemy(enemyType));
             }
             Global.mapEnemy.put(enemyType, array);
         }
         for (int n = 0; n < Control.typeBuild3.length; ++n) {
-            final Array<BaseEnemy> array2 = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType2 = Control.typeBuild3[n];
+            Array<BaseEnemy> array2 = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType2 = Control.typeBuild3[n];
             for (int n2 = 0; n2 < 4; ++n2) {
                 array2.add(TypeHandle.createEnemy(enemyType2));
             }
@@ -260,16 +267,16 @@ public class Control
         }
         Global.mapEnemy.clear();
         for (int k = 0; k < Control.typeMove4.length; ++k) {
-            final Array<BaseEnemy> array = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType = Control.typeMove4[k];
+            Array<BaseEnemy> array = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType = Control.typeMove4[k];
             for (int l = 0; l < 8; ++l) {
                 array.add(TypeHandle.createEnemy(enemyType));
             }
             Global.mapEnemy.put(enemyType, array);
         }
         for (int n = 0; n < Control.typeBuild4.length; ++n) {
-            final Array<BaseEnemy> array2 = new Array<BaseEnemy>();
-            final Constant.EnemyType enemyType2 = Control.typeBuild4[n];
+            Array<BaseEnemy> array2 = new Array<BaseEnemy>();
+            Constant.EnemyType enemyType2 = Control.typeBuild4[n];
             for (int n2 = 0; n2 < 4; ++n2) {
                 array2.add(TypeHandle.createEnemy(enemyType2));
             }
@@ -286,63 +293,91 @@ public class Control
         else {
             n = Global.curGameLevelHard;
         }
-        final JsonValue value = Global.manager.get("json/enemy/level" + n + ".json", JsonValue.class).get(0);
+        JsonValue value = Global.manager.get("json/enemy/level" + n + ".json", JsonValue.class).get(0);
         Global.arrEnemyCreate.clear();
         Global.arrBossPos.clear();
         Global.arrBoxPos.clear();
         int n2 = 0;
         while (true) {
-            final JsonValue value2 = value.get(n2);
+        	Debug.log("levelClearForNormal 1");
+            JsonValue value2 = value.get(n2);
+            Debug.log("levelClearForNormal 2");
             if (value2 == null) {
+            	Debug.log("levelClearForNormal 3");
                 break;
             }
-            final Constant.EnemyType value3 = Constant.EnemyType.valueOf(value2.getString("name").substring(4));
-            final BaseEnemy enemy = TypeHandle.createEnemy(value3);
-            final float float1 = value2.getFloat("x");
-            final float float2 = value2.getFloat("y");
+            Debug.log("levelClearForNormal 4");
+            Constant.EnemyType value3 = Constant.EnemyType.valueOf(value2.getString("name").substring(4));
+            Debug.log("levelClearForNormal 5");
+            BaseEnemy enemy = TypeHandle.createEnemy(value3);
+            Debug.log("levelClearForNormal 6");
+            float float1 = value2.getFloat("x");
+            Debug.log("levelClearForNormal 7");
+            float float2 = value2.getFloat("y");
+            Debug.log("levelClearForNormal 8");
             if (value3 == Constant.EnemyType.Flag) {
+            	Debug.log("levelClearForNormal 9");
                 Global.levelEndPosX = float1;
             }
             else if (isBoxType(value3)) {
+            	Debug.log("levelClearForNormal 10");
                 Global.arrBoxPos.add(float1);
             }
             else if (isBossType(value3)) {
+            	Debug.log("levelClearForNormal 11");
                 Global.arrBossPos.add(float1);
+                Debug.log("levelClearForNormal 12");
                 Global.arrBossType.add(value3);
             }
+            Debug.log("levelClearForNormal 13");
             enemy.setPosition(float1, float2);
+            Debug.log("levelClearForNormal 14");
             Global.arrEnemyCreate.add(enemy);
+            Debug.log("levelClearForNormal 15");
             Global.totalEnemy = Global.arrEnemyCreate.size - 1;
+            Debug.log("levelClearForNormal 16");
             ++n2;
         }
         Global.endlessHashState = 1;
     }
     
     public static void loadForGame() {
-        final int sceneLevel = Global.sceneLevel;
+        int sceneLevel = Global.sceneLevel;
         Global.manager.load("json/enemy/level" + getGameLevel() + ".json", JsonValue.class);
         Global.manager.finishLoading();
         Global.manager.load("scene/scene" + sceneLevel + ".pack", TextureAtlas.class);
         Global.manager.load("ui/ui_weapon_enhance.pack", TextureAtlas.class);
         Global.manager.load("ui/ui_game_new.pack", TextureAtlas.class);
-        while (true) {
-            if (Global.isUnlockWeapon()) {
-                Global.manager.load("sound/dead_foot_1.ogg", Sound.class);
-                Global.manager.load("sound/dead_foot_2.ogg", Sound.class);
-                Global.manager.load("sound/dead_foot_3.ogg", Sound.class);
-                Global.manager.load("sound/dead_dragon_1.ogg", Sound.class);
-                Global.manager.load("sound/dead_dragon_2.ogg", Sound.class);
-                Global.manager.load("sound/dead_bomb_1.ogg", Sound.class);
-                Global.manager.load("sound/dead_bomb_2.ogg", Sound.class);
-                Global.manager.load("sound/dead_bomb_3.ogg", Sound.class);
-                loadForMainGun();
-                loadForSubGun();
-                loadForTurtle();
-                loadForGameLevel();
-                return;
-            }
-            continue;
-        }
+//        while (true) {
+//            if (Global.isUnlockWeapon()) {
+//                Global.manager.load("sound/dead_foot_1.ogg", Sound.class);
+//                Global.manager.load("sound/dead_foot_2.ogg", Sound.class);
+//                Global.manager.load("sound/dead_foot_3.ogg", Sound.class);
+//                Global.manager.load("sound/dead_dragon_1.ogg", Sound.class);
+//                Global.manager.load("sound/dead_dragon_2.ogg", Sound.class);
+//                Global.manager.load("sound/dead_bomb_1.ogg", Sound.class);
+//                Global.manager.load("sound/dead_bomb_2.ogg", Sound.class);
+//                Global.manager.load("sound/dead_bomb_3.ogg", Sound.class);
+//                loadForMainGun();
+//                loadForSubGun();
+//                loadForTurtle();
+//                loadForGameLevel();
+//                return;
+//            }
+//            continue;
+//        }
+        Global.manager.load("sound/dead_foot_1.ogg", Sound.class);
+        Global.manager.load("sound/dead_foot_2.ogg", Sound.class);
+        Global.manager.load("sound/dead_foot_3.ogg", Sound.class);
+        Global.manager.load("sound/dead_dragon_1.ogg", Sound.class);
+        Global.manager.load("sound/dead_dragon_2.ogg", Sound.class);
+        Global.manager.load("sound/dead_bomb_1.ogg", Sound.class);
+        Global.manager.load("sound/dead_bomb_2.ogg", Sound.class);
+        Global.manager.load("sound/dead_bomb_3.ogg", Sound.class);
+        loadForMainGun();
+        loadForSubGun();
+        loadForTurtle();
+        loadForGameLevel();
     }
     
     private static void loadForGameLevel() {
@@ -359,7 +394,7 @@ public class Control
     
     private static void loadForMainGun() {
         for (int i = 0; i < Global.arrStrMainSelect.size; ++i) {
-            final String s = Global.arrStrMainSelect.get(i);
+            String s = Global.arrStrMainSelect.get(i);
             if (s.equals("SinglePipe")) {
                 SinglePipe.loadElements();
             }
@@ -494,23 +529,23 @@ public class Control
     
     public static void setBossCallType() {
         Control.arrBossRandType.clear();
-        final Array<Constant.EnemyType> array = new Array<Constant.EnemyType>();
+        Array<Constant.EnemyType> array = new Array<Constant.EnemyType>();
         for (int i = 0; i < Global.arrEnemyType.size; ++i) {
-            final Constant.EnemyType enemyType = Global.arrEnemyType.get(i);
+            Constant.EnemyType enemyType = Global.arrEnemyType.get(i);
             if (isBossType(enemyType)) {
                 array.add(enemyType);
             }
         }
         if (array.size != 0) {
-            final JsonValue value = Global.manager.get("json/bosscall/boss_call.json", JsonValue.class).get(0);
+            JsonValue value = Global.manager.get("json/bosscall/boss_call.json", JsonValue.class).get(0);
             for (int j = 0; j < array.size; ++j) {
-                final JsonValue value2 = value.get(array.get(j).toString()).get("randTypes");
+                JsonValue value2 = value.get(array.get(j).toString()).get("randTypes");
                 for (int k = 0; k < value2.size; ++k) {
                     Control.arrBossRandType.add(Constant.EnemyType.valueOf(value2.get(k).asString()));
                 }
             }
             for (int l = 0; l < Control.arrBossRandType.size; ++l) {
-                final Constant.EnemyType enemyType2 = Control.arrBossRandType.get(l);
+                Constant.EnemyType enemyType2 = Control.arrBossRandType.get(l);
                 if (!Global.arrEnemyType.contains(enemyType2, true)) {
                     Global.arrEnemyType.add(enemyType2);
                 }
@@ -528,15 +563,15 @@ public class Control
             else {
                 n = Global.curGameLevelHard;
             }
-            final JsonValue value = Global.manager.get("json/enemy/level" + n + ".json", JsonValue.class).get(0);
+            JsonValue value = Global.manager.get("json/enemy/level" + n + ".json", JsonValue.class).get(0);
             int n2 = 0;
             while (true) {
-                final JsonValue value2 = value.get(n2);
+                JsonValue value2 = value.get(n2);
                 if (value2 == null) {
                     break;
                 }
-                final Constant.EnemyType value3 = Constant.EnemyType.valueOf(value2.getString("name").substring(4));
-                final boolean b = false;
+                Constant.EnemyType value3 = Constant.EnemyType.valueOf(value2.getString("name").substring(4));
+                boolean b = false;
                 int n3 = 0;
                 boolean b2;
                 while (true) {
@@ -565,7 +600,7 @@ public class Control
     
     public static void unloadForGame() {
         for (int i = 0; i < 5; ++i) {
-            final String string = "scene/scene" + (i + 1) + ".pack";
+            String string = "scene/scene" + (i + 1) + ".pack";
             if (Global.manager.isLoaded(string)) {
                 Global.manager.unload(string);
             }
@@ -604,7 +639,7 @@ public class Control
     
     private static void unloadForMainGun() {
         for (int i = 0; i < Global.arrStrMainSelect.size; ++i) {
-            final String s = Global.arrStrMainSelect.get(i);
+            String s = Global.arrStrMainSelect.get(i);
             if (s.equals("SinglePipe")) {
                 SinglePipe.unloadElements();
             }
@@ -649,7 +684,7 @@ public class Control
     
     public static void unloadForMenu() {
         for (int min = Math.min(5, (Global.maxGameLevelEasy - 1) / 10 + 1), i = 0; i < min; ++i) {
-            final String string = "scene/scene" + (i + 1) + ".pack";
+            String string = "scene/scene" + (i + 1) + ".pack";
             if (Global.manager.isLoaded(string)) {
                 Global.manager.unload(string);
             }

@@ -345,7 +345,6 @@ public class Player extends Group
     
     @Override
     public void draw(SpriteBatch spriteBatch, float parentAlpha) {
-    	super.draw(spriteBatch, parentAlpha);
 //        BaseMainGun curMainGun = this.getCurMainGun();
 //        while (true) {
 //            if (curMainGun == null || curMainGun.getCurHp() > 0.0f) {
@@ -354,6 +353,10 @@ public class Player extends Group
 //            }
 //            continue;
 //        }
+          BaseMainGun curMainGun = this.getCurMainGun();
+          if (curMainGun != null && curMainGun.getCurHp() > 0.0f) {
+              super.draw(spriteBatch, parentAlpha);
+          }
     }
     
     

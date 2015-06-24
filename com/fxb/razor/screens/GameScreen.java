@@ -1,6 +1,7 @@
 package com.fxb.razor.screens;
 
 import com.fxb.razor.stages.*;
+import com.fxb.razor.utils.Debug;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.*;
 import com.fxb.razor.*;
@@ -30,7 +31,6 @@ public class GameScreen extends BaseScreen
 //        }
         BaseScreen.addFadeInAction(this.gameStage, 0.2f);
         this.multiplexer.addProcessor(0, this.gameStage);
-        Gdx.input.setInputProcessor(this.gameStage);
     }
     
     @Override

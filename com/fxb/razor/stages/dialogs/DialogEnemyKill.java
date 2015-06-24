@@ -22,10 +22,10 @@ public class DialogEnemyKill extends BaseDialog
         this.arrKillItem = new Array<GroupKillItem>();
         this.btnListener = new ButtonListener() {
             @Override
-            public void touchUp(final InputEvent inputEvent, final float n, final float n2, final int n3, final int n4) {
+            public void touchUp(InputEvent inputEvent, float n, float n2, int n3, int n4) {
                 super.touchUp(inputEvent, n, n2, n3, n4);
                 if (this.isDown) {
-                    final Actor listenerActor = inputEvent.getListenerActor();
+                    Actor listenerActor = inputEvent.getListenerActor();
                     SoundHandle.playForButton2();
                     if (listenerActor == DialogEnemyKill.this.imgClose) {
                         DialogHandle.closeDialog(DialogEnemyKill.this, 0.35f);
@@ -49,7 +49,7 @@ public class DialogEnemyKill extends BaseDialog
         this.table = new Table();
         this.table.defaults().space(3.0f);
         this.table.defaults().padBottom(10.0f);
-        final ScrollPane.ScrollPaneStyle scrollPaneStyle = new ScrollPane.ScrollPaneStyle();
+        ScrollPane.ScrollPaneStyle scrollPaneStyle = new ScrollPane.ScrollPaneStyle();
         scrollPaneStyle.hScroll = new TextureRegionDrawable(this.atlasEnemyKill.findRegion("tiao"));
         scrollPaneStyle.hScrollKnob = new TextureRegionDrawable(this.atlasEnemyKill.findRegion("huadonganniu"));
         scrollPaneStyle.vScroll = new TextureRegionDrawable(this.atlasEnemyKill.findRegion("tiao"));
@@ -71,7 +71,7 @@ public class DialogEnemyKill extends BaseDialog
     
     public void initTable() {
         for (int i = 0; i < Constant.enemyTypes.length - 11; ++i) {
-            final Constant.EnemyType enemyType = Constant.enemyTypes[i];
+            Constant.EnemyType enemyType = Constant.enemyTypes[i];
             if (PreferHandle.isTypeRecord(enemyType)) {
                 this.arrKillItem.add(new GroupKillItem(enemyType));
             }
@@ -88,10 +88,15 @@ public class DialogEnemyKill extends BaseDialog
         MyLabel labelCount;
         Constant.EnemyType type;
         
-        public GroupKillItem(final Constant.EnemyType enemyType) {
-            final String lowerCase = enemyType.toString().toLowerCase();
+        public GroupKillItem(Constant.EnemyType enemyType) {
+            String lowerCase = enemyType.toString().toLowerCase();
             this.imgBg = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, "beijing", 0.0f, 0.0f);
             (this.imgType = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, lowerCase, 53.0f, 96.0f)).setPosition((139.0f - this.imgType.getWidth()) / 2.0f, 60.0f + (125.0f - this.imgType.getHeight()) / 2.0f);
+            if (this.imgType == null) {
+            	 Debug.log("name:" + lowerCase);
+            	
+            }
+            Debug.log("name:" +  lowerCase);
             DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, lowerCase + "_t", 22.0f, 10.0f);
             this.imgLabelBg = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, "tongjikuang", 35.0f, 41.0f);
             int intValue;

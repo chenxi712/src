@@ -586,25 +586,37 @@ public class Control
         Global.manager.unload("json/enemy/level" + getGameLevel() + ".json");
         Global.manager.unload("ui/ui_game_new.pack");
         Global.manager.unload("ui/ui_weapon_enhance.pack");
-        while (true) {
-            if (Global.isUnlockWeapon()) {
-                Global.manager.unload("sound/dead_foot_1.ogg");
-                Global.manager.unload("sound/dead_foot_2.ogg");
-                Global.manager.unload("sound/dead_foot_3.ogg");
-                Global.manager.unload("sound/dead_dragon_1.ogg");
-                Global.manager.unload("sound/dead_dragon_2.ogg");
-                Global.manager.unload("sound/dead_bomb_1.ogg");
-                Global.manager.unload("sound/dead_bomb_2.ogg");
-                Global.manager.unload("sound/dead_bomb_3.ogg");
-                unloadForGameLevel();
-                unloadForTurtle();
-                unloadForSubGun();
-                unloadForMainGun();
-                return;
-            }
-            continue;
-        }
-    }
+//        while (true) {
+//            if (Global.isUnlockWeapon()) {
+//                Global.manager.unload("sound/dead_foot_1.ogg");
+//                Global.manager.unload("sound/dead_foot_2.ogg");
+//                Global.manager.unload("sound/dead_foot_3.ogg");
+//                Global.manager.unload("sound/dead_dragon_1.ogg");
+//                Global.manager.unload("sound/dead_dragon_2.ogg");
+//                Global.manager.unload("sound/dead_bomb_1.ogg");
+//                Global.manager.unload("sound/dead_bomb_2.ogg");
+//                Global.manager.unload("sound/dead_bomb_3.ogg");
+//                unloadForGameLevel();
+//                unloadForTurtle();
+//                unloadForSubGun();
+//                unloadForMainGun();
+//                return;
+//            }
+//            continue;
+//        }
+        Global.manager.unload("sound/dead_foot_1.ogg");
+        Global.manager.unload("sound/dead_foot_2.ogg");
+        Global.manager.unload("sound/dead_foot_3.ogg");
+        Global.manager.unload("sound/dead_dragon_1.ogg");
+        Global.manager.unload("sound/dead_dragon_2.ogg");
+        Global.manager.unload("sound/dead_bomb_1.ogg");
+        Global.manager.unload("sound/dead_bomb_2.ogg");
+        Global.manager.unload("sound/dead_bomb_3.ogg");
+        unloadForGameLevel();
+        unloadForTurtle();
+        unloadForSubGun();
+        unloadForMainGun();
+}
     
     private static void unloadForGameLevel() {
         for (int i = 0; i < Global.arrEnemyType.size; ++i) {

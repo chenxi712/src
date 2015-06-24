@@ -86,12 +86,15 @@ public abstract class Bullet extends Actor
     
     public void draw(final SpriteBatch spriteBatch, final float n) {
         super.draw(spriteBatch, n);
-        while (true) {
-            if (this.region != null) {
-                spriteBatch.draw(this.region, this.getX(), this.getY(), this.getOriginX(), this.getOriginY(), this.getWidth(), this.getHeight(), this.getScaleX(), this.getScaleY(), this.getRotation());
-                return;
-            }
-            continue;
+//        while (true) {
+//            if (this.region != null) {
+//                spriteBatch.draw(this.region, this.getX(), this.getY(), this.getOriginX(), this.getOriginY(), this.getWidth(), this.getHeight(), this.getScaleX(), this.getScaleY(), this.getRotation());
+//                return;
+//            }
+//            continue;
+//        }
+        if (this.region != null) {
+            spriteBatch.draw(this.region, this.getX(), this.getY(), this.getOriginX(), this.getOriginY(), this.getWidth(), this.getHeight(), this.getScaleX(), this.getScaleY(), this.getRotation());
         }
     }
     

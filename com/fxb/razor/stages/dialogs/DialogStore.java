@@ -705,7 +705,7 @@ public class DialogStore extends BaseDialog
         this.close();
     }
     
-    public void openDialog(final Stage stage) {
+    public void openDialog(Stage stage) {
         this.coinMondChange();
         if (this.baseScreen == null) {
             DialogHandle.openDialog(stage, this);
@@ -726,7 +726,6 @@ public class DialogStore extends BaseDialog
     
     public void selectItem(final int n) {
         switch (n) {
-            default: {}
             case 1: {
                 this.pans[0].setVisible(false);
                 this.pans[1].setVisible(true);
@@ -736,6 +735,7 @@ public class DialogStore extends BaseDialog
                 this.imgWeaponBg.setVisible(false);
                 this.zoomInOut(this.imgMondBg);
                 this.imgMond.toFront();
+                break;
             }
             case 2: {
                 this.pans[0].setVisible(true);
@@ -746,6 +746,7 @@ public class DialogStore extends BaseDialog
                 this.imgWeaponBg.setVisible(false);
                 this.zoomInOut(this.imgCoinBg);
                 this.imgCoin.toFront();
+                break;
             }
             case 3: {
                 this.pans[0].setVisible(false);
@@ -756,6 +757,7 @@ public class DialogStore extends BaseDialog
                 this.imgWeaponBg.setVisible(true);
                 this.zoomInOut(this.imgWeaponBg);
                 this.imgWeapon.toFront();
+                break;
             }
         }
     }

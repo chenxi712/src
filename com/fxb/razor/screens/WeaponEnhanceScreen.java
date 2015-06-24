@@ -189,16 +189,23 @@ public class WeaponEnhanceScreen extends BaseScreen
             
             @Override
             public void touchDragged(final InputEvent inputEvent, final float n, final float n2, final int n3) {
-                while (true) {
-                    if (this.isTouchValid) {
-                        final Actor listenerActor = inputEvent.getListenerActor();
-                        if (Math.abs(n - this.startX) > 15.0f || Math.abs(n2 - this.startY) > 15.0f) {
-                            this.isTouchValid = false;
-                            listenerActor.addAction(TouchAction.upAction());
-                        }
-                        return;
+//                while (true) {
+//                    if (this.isTouchValid) {
+//                        final Actor listenerActor = inputEvent.getListenerActor();
+//                        if (Math.abs(n - this.startX) > 15.0f || Math.abs(n2 - this.startY) > 15.0f) {
+//                            this.isTouchValid = false;
+//                            listenerActor.addAction(TouchAction.upAction());
+//                        }
+//                        return;
+//                    }
+//                    continue;
+//                }
+                if (this.isTouchValid) {
+                    final Actor listenerActor = inputEvent.getListenerActor();
+                    if (Math.abs(n - this.startX) > 15.0f || Math.abs(n2 - this.startY) > 15.0f) {
+                        this.isTouchValid = false;
+                        listenerActor.addAction(TouchAction.upAction());
                     }
-                    continue;
                 }
             }
             

@@ -428,7 +428,8 @@ public class GameStage extends Stage
             (this.helpBoard.imgShade = MyShade.createShade(this)).setTouchable(Touchable.disabled);
             this.helpBoard.arrowRect = ArrowRect.createArrowRect(this, 100.0f, 50.0f, 550.0f, 150.0f);
             this.helpBoard.imgHand = UiHandle.createHand(this, this.helpBoard.arrowRect);
-            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Tap to fire!", this.helpBoard.arrowRect, -1, 1);
+//            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Tap to fire!", this.helpBoard.arrowRect, -1, 1);
+            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, Language.tapToFire(), this.helpBoard.arrowRect, -1, 1);
             Global.gameState = Constant.GameState.Game_Instruct;
             this.insturcStep = 11;
         }

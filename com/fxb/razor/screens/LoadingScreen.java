@@ -37,7 +37,7 @@ public class LoadingScreen extends BaseScreen
         (this.regionBar3 = new TextureRegion(this.regionBar1)).flip(true, false);
         this.loadTime = 0.0f;
         this.isLoad = true;
-        RazorActivity.InitServerTime();
+//        RazorActivity.InitServerTime();
         this.loadForScreen();
     }
     

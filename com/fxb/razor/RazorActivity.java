@@ -81,7 +81,7 @@ public class RazorActivity extends AndroidApplication
     }
     
     public static void setServerTime(final long n) {
-        RazorActivity.serverTime = 1000L * n;
+        RazorActivity.serverTime = n;
         final Calendar instance = Calendar.getInstance();
         instance.setTimeInMillis(RazorActivity.serverTime);
         System.out.println(instance.getTime());

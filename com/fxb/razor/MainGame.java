@@ -1,6 +1,7 @@
 package com.fxb.razor;
 
 import java.util.concurrent.*;
+
 import com.fxb.razor.common.*;
 import com.fxb.razor.screens.*;
 import com.badlogic.gdx.*;
@@ -40,6 +41,7 @@ public class MainGame extends Game
         this.setScreen(new LoadingScreen(this));
         this.nextScreen = null;
         new Thread(new SoundRunnable()).start();
+        RazorActivity.InitServerTime();
     }
     
     @Override

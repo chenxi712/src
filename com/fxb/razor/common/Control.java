@@ -433,6 +433,8 @@ public class Control
     public static void loadForStart() {
         Global.manager.load("font/msb15.fnt", BitmapFont.class);
         Global.manager.load("font/msb14.fnt", BitmapFont.class);
+        Global.manager.load("font/kt14.fnt", BitmapFont.class);
+        Global.manager.load("font/kt15.fnt", BitmapFont.class);
         Global.manager.load("data/trace2.png", Texture.class);
         for (int i = 0; i < 5; ++i) {
             Global.manager.load("json/scene/backscene" + (i + 1) + ".json", JsonValue.class);

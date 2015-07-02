@@ -22,7 +22,7 @@ public class JsonLoader extends AsynchronousAssetLoader<JsonValue, JsonParameter
     @Override
     public void loadAsync(final AssetManager assetManager, final String s, final FileHandle fileHandle, final com.fxb.razor.utils.loader.JsonParameter jsonParameter) {
         try {
-            this.value = new JsonReader().parse(Gdx.files.internal(s));
+            this.value = new JsonReader().parse(Gdx.files.internal(s).reader("UTF-8"));
         }
         catch (Exception ex) {
             this.value = null;

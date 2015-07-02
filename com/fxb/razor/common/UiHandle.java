@@ -1,12 +1,10 @@
 package com.fxb.razor.common;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.utils.*;
 import com.fxb.razor.utils.Language;
 import com.fxb.razor.utils.ui.*;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.actions.*;
@@ -18,10 +16,6 @@ public class UiHandle
     
     static {
         colorFont = new Color(0.84313726f, 0.83137256f, 0.62352943f, 1.0f);
-        
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.absolute("system/fonts/DroidSansFallback.ttf"));
-		font15 = generator.generateFont(15); // font size 12 pixels
-		generator.dispose(); // don't forget to dispose to avoid memory leaks!
     }
     
     public static MyImage addItem(final Group group, final TextureAtlas textureAtlas, final String s, final float n, final float n2) {
@@ -287,19 +281,20 @@ public class UiHandle
     }
     
     public static Label.LabelStyle getLabelStyle14() {
+    	if (Language.region == Language.Regions.Chinese) {
+			Label.LabelStyle labelStyle = new Label.LabelStyle(Assets.fontKT14, UiHandle.colorFont);
+			labelStyle.fontColor = UiHandle.colorFont;
+	        return labelStyle;
+		}
+    	
         final Label.LabelStyle labelStyle = new Label.LabelStyle(Assets.fontMs14, UiHandle.colorFont);
         labelStyle.fontColor = UiHandle.colorFont;
         return labelStyle;
     }
     
-    static BitmapFont font15;
     public static Label.LabelStyle getLabelStyle15() {
-    	
-		
 		if (Language.region == Language.Regions.Chinese) {
-			
-			
-			Label.LabelStyle labelStyle = new Label.LabelStyle(font15, UiHandle.colorFont);
+			Label.LabelStyle labelStyle = new Label.LabelStyle(Assets.fontKT15, UiHandle.colorFont);
 			labelStyle.fontColor = UiHandle.colorFont;
 	        return labelStyle;
 		}

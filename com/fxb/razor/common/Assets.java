@@ -1,8 +1,6 @@
 package com.fxb.razor.common;
 
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -26,6 +24,8 @@ public class Assets
   public static TextureAtlas atlasWeaponSelect;
   public static BitmapFont fontMs14 = null;
   public static BitmapFont fontMs16;
+  public static BitmapFont fontKT14;
+  public static BitmapFont fontKT15;
   public static JsonValue jsonEnhance;
   public static JsonValue jsonProperty;
   public static JsonValue jsonWeapon;
@@ -54,9 +54,12 @@ public class Assets
     atlasNumber = null;
     atlasInstruction = null;
     fontMs16 = null;
+    fontKT14 = null;
+    fontKT15 = null;
   }
   
-  public static void dispose() {}
+  public static void dispose() {
+  }
   
   public static void init() {}
   
@@ -83,7 +86,10 @@ public class Assets
     atlasStart = (TextureAtlas)Global.manager.get("ui/ui_start.pack", TextureAtlas.class);
     fontMs16 = (BitmapFont)Global.manager.get("font/msb15.fnt", BitmapFont.class);
     fontMs14 = (BitmapFont)Global.manager.get("font/msb14.fnt", BitmapFont.class);
+    fontKT14 = (BitmapFont)Global.manager.get("font/kt14.fnt", BitmapFont.class);
+    fontKT15 = (BitmapFont)Global.manager.get("font/kt15.fnt", BitmapFont.class);
     fontMs16.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     fontMs14.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+    fontKT15.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
   }
 }

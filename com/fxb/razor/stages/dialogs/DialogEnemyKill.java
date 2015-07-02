@@ -92,11 +92,6 @@ public class DialogEnemyKill extends BaseDialog
             String lowerCase = enemyType.toString().toLowerCase();
             this.imgBg = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, "beijing", 0.0f, 0.0f);
             (this.imgType = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, lowerCase, 53.0f, 96.0f)).setPosition((139.0f - this.imgType.getWidth()) / 2.0f, 60.0f + (125.0f - this.imgType.getHeight()) / 2.0f);
-            if (this.imgType == null) {
-            	 Debug.log("name:" + lowerCase);
-            	
-            }
-            Debug.log("name:" +  lowerCase);
             DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, lowerCase + "_t", 22.0f, 10.0f);
             this.imgLabelBg = DialogEnemyKill.this.addItem(this, DialogEnemyKill.this.atlasEnemyKill, "tongjikuang", 35.0f, 41.0f);
             int intValue;

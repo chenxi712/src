@@ -3,17 +3,15 @@ package com.fxb.razor.screens;
 import com.fxb.razor.utils.ui.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeBitmapFontData;
 import com.badlogic.gdx.*;
 import com.fxb.razor.utils.*;
 import com.badlogic.gdx.scenes.scene2d.actions.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.fxb.razor.*;
 import com.fxb.razor.common.*;
-import com.fxb.razor.roles.Turtle;
 import com.fxb.razor.stages.dialogs.*;
 
 public class StartScreen extends BaseScreen
@@ -128,16 +126,9 @@ public class StartScreen extends BaseScreen
         this.dialogSpeSold = new DialogSpeSold(this, this.mondLackDialog);
         this.dialogStore = new DialogStore(this);
         
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.absolute("/system/fonts/DroidSansFallback.ttf"));
-//        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("Fangsong.ttf"));
-//        BitmapFont font15 = generator.generateFont(30); 
-        FreeTypeBitmapFontData data = generator.generateData(25, "陈Xi", false);
-        BitmapFont font15 = new BitmapFont(data, data.getTextureRegion(), false);
-		generator.dispose(); 
-		
-        Label.LabelStyle style = new Label.LabelStyle(font15, Color.YELLOW);
-//        AutoLineLabel l = new AutoLineLabel("陈Xi", style, 50);
-        Label l = new Label("陈西", style);
+
+        Label.LabelStyle style = UiHandle.getLabelStyle15();
+        AutoLineLabel l = new AutoLineLabel("伤害 +30%", style, 1);
         l.setPosition(200,  200);
         stage.addActor(l);
     }

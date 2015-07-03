@@ -754,7 +754,8 @@ public class WeaponScreen extends BaseScreen
                     }
                 }
             }
-            final String s = "Tap and hold to select the \nweapon!";
+//            final String s = "Tap and hold to select the \nweapon!";
+            final String s = Language.tapAndSelectWeapon();
             int n3;
             String s2;
             if (Global.maxGameLevelEasy == 2) {
@@ -764,7 +765,8 @@ public class WeaponScreen extends BaseScreen
                     n3 = n2;
                     s2 = s;
                     if (this.arrMainIdle.get(0).getName().equals("ren02")) {
-                        s2 = "Tap and hold to add artillery.";
+//                        s2 = "Tap and hold to add artillery.";
+                        s2 = Language.tapToAddArtillery();
                         n3 = 1;
                     }
                 }
@@ -779,7 +781,8 @@ public class WeaponScreen extends BaseScreen
                         n3 = n2;
                         s2 = s;
                         if (this.arrMainIdle.get(0).getName().equals("ren03")) {
-                            s2 = "Tap to arm with shotgun. \n(Designed for attacking \nairforce)";
+//                            s2 = "Tap to arm with shotgun. \n(Designed for attacking \nairforce)";
+                            s2 = Language.tapToArm();
                             n3 = 1;
                         }
                     }
@@ -798,7 +801,8 @@ public class WeaponScreen extends BaseScreen
             }
         }
         if (insStep == 61) {
-            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.arrMainSelect.get(2), "Tap and hold to remove the \nweapon!", -1, 1);
+//            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.arrMainSelect.get(2), "Tap and hold to remove the \nweapon!", -1, 1);
+            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.arrMainSelect.get(2), Language.tapAndRemoveWeapon(), -1, 1);
             this.helpBoard.imgHand.clearActions();
             this.helpBoard.imgHand.addAction(Actions.forever(Actions.sequence(Actions.delay(0.3f), Actions.moveTo(510.0f, 180.0f, 1.2f), Actions.delay(0.2f), Actions.moveTo(424.0f, -25.0f, 0.6f))));
             this.helpBoard.insStep = insStep;
@@ -828,7 +832,8 @@ public class WeaponScreen extends BaseScreen
                 tempTarget2.setPosition(172.0f, 254.0f);
                 tempTarget2.addListener(this.subIdleListener);
                 this.stage.addActor(tempTarget2);
-                this.helpBoard = HelpBoard.createHelpBoard(this.stage, tempTarget2, "Tap and hold to select the \nweapon!", 1, 1);
+//                this.helpBoard = HelpBoard.createHelpBoard(this.stage, tempTarget2, "Tap and hold to select the \nweapon!", 1, 1);
+                this.helpBoard = HelpBoard.createHelpBoard(this.stage, tempTarget2, Language.tapAndSelectWeapon(), 1, 1);
                 this.helpBoard.tempTarget = tempTarget2;
                 this.helpBoard.imgHand.clearActions();
                 this.helpBoard.imgHand.addAction(Actions.forever(Actions.sequence(Actions.delay(0.3f), Actions.moveTo(520.0f, -40.0f, 1.2f), Actions.delay(0.2f), Actions.moveTo(197.0f, 206.0f, 0.6f))));

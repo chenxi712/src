@@ -151,7 +151,8 @@ public class LevelScreen extends BaseScreen
                             MyMethods.delayRun(LevelScreen.this.stage.getRoot(), new Runnable() {
                                 @Override
                                 public void run() {
-                                    HelpBoard.createHelpBoard(LevelScreen.this.stage, LevelScreen.this.itemMode.getImgEasy(), "Tap to choose easy mode!", 1, 1);
+//                                    HelpBoard.createHelpBoard(LevelScreen.this.stage, LevelScreen.this.itemMode.getImgEasy(), "Tap to choose easy mode!", 1, 1);
+                                    HelpBoard.createHelpBoard(LevelScreen.this.stage, LevelScreen.this.itemMode.getImgEasy(), Language.tapToChooseEasy(), 1, 1);
                                 }
                             }, 0.4f);
                             break;
@@ -216,7 +217,8 @@ public class LevelScreen extends BaseScreen
         this.dialogSet = new DialogSet();
         this.itemMode = new ItemMode();
         if (Global.maxGameLevelEasy == 1) {
-            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], "Tap to continue!", 1, 1);
+//            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], "Tap to continue!", 1, 1);
+            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], Language.tapToContinue(), 1, 1);
             this.insStep = 11;
         }
         this.dialogStore = new DialogStore(this, this.groupCoinHead, this.groupMondHead);

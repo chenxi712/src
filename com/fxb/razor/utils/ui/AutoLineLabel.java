@@ -2,6 +2,7 @@ package com.fxb.razor.utils.ui;
 
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.fxb.razor.common.*;
+import com.fxb.razor.utils.Language;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.graphics.g2d.*;
 
@@ -51,6 +52,11 @@ public class AutoLineLabel extends Label
     }
     
     public void setInfo(final String s) {
+    	if (Language.region == Language.Regions.Chinese) {
+    		super.setText(s);
+    		return;
+    	}
+    	
         final StringBuilder sb = new StringBuilder();
         float n = 0.0f;
         final BitmapFont font = this.getStyle().font;

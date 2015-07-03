@@ -279,7 +279,8 @@ public class WeaponEnhanceScreen extends BaseScreen
     
     private void addInstrction() {
         if (Global.maxGameLevelEasy == 8 && PreferHandle.readWeaponEnhance("SinglePipe") == 0 && Global.totalCoinNum >= 300.0f) {
-            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupEnhance, "Tap to upgrade \nmachine-gun!", -1, 1);
+//            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupEnhance, "Tap to upgrade \nmachine-gun!", -1, 1);
+            this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupEnhance, Language.tapUpgradeGun(), -1, 1);
             this.helpBoard.insStep = 81;
         }
     }

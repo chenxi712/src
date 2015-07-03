@@ -125,12 +125,6 @@ public class StartScreen extends BaseScreen
         this.mondLackDialog = new MondLackDialog(this);
         this.dialogSpeSold = new DialogSpeSold(this, this.mondLackDialog);
         this.dialogStore = new DialogStore(this);
-        
-
-        Label.LabelStyle style = UiHandle.getLabelStyle15();
-        AutoLineLabel l = new AutoLineLabel("伤害 +30%", style, 1);
-        l.setPosition(200,  200);
-        stage.addActor(l);
     }
     
     private void initFlag() {

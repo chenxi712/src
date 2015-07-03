@@ -440,7 +440,8 @@ public class GameStage extends Stage
             this.actorTarget.remove();
             this.addActor(this.actorTarget);
             this.helpBoard.arrowRect = ArrowRect.createArrowRect(this, this.actorTarget);
-            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Tap to switch weapon!", this.actorTarget, 1, 1);
+//            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Tap to switch weapon!", this.actorTarget, 1, 1);
+            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, Language.tapToSwitchWeapon(), this.actorTarget, 1, 1);
             this.helpBoard.imgHand = UiHandle.createHand(this, this.actorTarget);
             Global.gameState = Constant.GameState.Game_Instruct;
             this.insturcStep = 21;
@@ -450,7 +451,8 @@ public class GameStage extends Stage
                 @Override
                 public void run() {
                     (GameStage.this.actorTarget = GameStage.this.player.getSubGun().getSubGunIcon()).setTouchable(Touchable.enabled);
-                    GameStage.this.helpBoard = HelpBoard.createDialogBoard(GameStage.this, GameStage.this.actorTarget, "Tap to use skill!", 1, 1);
+//                    GameStage.this.helpBoard = HelpBoard.createDialogBoard(GameStage.this, GameStage.this.actorTarget, "Tap to use skill!", 1, 1);
+                    GameStage.this.helpBoard = HelpBoard.createDialogBoard(GameStage.this, GameStage.this.actorTarget, Language.tapToUseSkill(), 1, 1);
                     Global.gameState = Constant.GameState.Game_Instruct;
                     GameStage.this.helpBoard.insStep = 91;
                 }
@@ -629,7 +631,8 @@ public class GameStage extends Stage
                 }
             }
             this.helpBoard.arrowRect.toFront();
-            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Artillery can destroy enemy's \ndefensive towers effectively!", this.enemyTarget, -1, 1);
+//            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, "Artillery can destroy enemy's \ndefensive towers effectively!", this.enemyTarget, -1, 1);
+            this.helpBoard.groupBoard = UiHandle.createInsturctionBoard(this, Language.tapToDestroyTower(), this.enemyTarget, -1, 1);
             this.helpBoard.imgHand.toFront();
             this.helpBoard.arrowRect.setTarget(this.enemyTarget);
             UiHandle.setHandTarget(this.helpBoard.imgHand, this.enemyTarget);

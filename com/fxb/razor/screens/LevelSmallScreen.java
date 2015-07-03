@@ -312,22 +312,27 @@ public class LevelSmallScreen extends BaseScreen
     
     public void addInstruction() {
         if (Global.maxGameLevelEasy == 1) {
-            HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], "Tap to select level 1!", 1, -1);
+//            HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], "Tap to select level 1!", 1, -1);
+            HelpBoard.createHelpBoard(this.stage, this.groupFlags[0], Language.tapToSelectLv1(), 1, -1);
         }
         else {
             if (Global.maxGameLevelEasy == 2) {
-                HelpBoard.createHelpBoard(this.stage, this.groupFlags[1], "Next level!", 1, -1);
+//                HelpBoard.createHelpBoard(this.stage, this.groupFlags[1], "Next level!", 1, -1);
+                HelpBoard.createHelpBoard(this.stage, this.groupFlags[1], Language.tapToNextLv(), 1, -1);
                 return;
             }
             if (Global.maxGameLevelEasy == 4 && !PreferHandle.readInstruction("instructionScatter")) {
                 if (!Global.arrMainGunGet.contains("Scatter", false)) {
-                    this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgStore, "Tap store!", -1, -1);
+//                    this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgStore, "Tap store!", -1, -1);
+                    this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgStore, Language.tapStore(), -1, -1);
                     return;
                 }
-                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[3], "Tap to continue!", -1, -1);
+//                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[3], "Tap to continue!", -1, -1);
+                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupFlags[3], Language.tapToContinue(), -1, -1);
             }
             else if (Global.maxGameLevelEasy == 8 && !PreferHandle.readInstruction("instructionEnhance") && PreferHandle.readWeaponEnhance("SinglePipe") == 0) {
-                HelpBoard.createHelpBoard(this.stage, this.imgEnhance, "Tap to open weapon storage!", -1, 1);
+//            	HelpBoard.createHelpBoard(this.stage, this.imgEnhance, "Tap to open weapon storage!", -1, 1);
+                HelpBoard.createHelpBoard(this.stage, this.imgEnhance, Language.tapWeaponStorage(), -1, 1);
             }
         }
     }

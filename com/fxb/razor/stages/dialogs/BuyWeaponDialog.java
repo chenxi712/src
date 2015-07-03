@@ -86,7 +86,8 @@ public class BuyWeaponDialog extends BaseDialog
             if (this.helpBoard != null) {
                 this.helpBoard.remove();
             }
-            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgBuy, "Tap to continue!", -1, 1);
+//            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgBuy, "Tap to continue!", -1, 1);
+            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgBuy, Language.tapToContinue(), -1, 1);
             this.helpBoard.insStep = insStep;
         }
     }

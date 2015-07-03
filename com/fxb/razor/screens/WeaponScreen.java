@@ -279,7 +279,8 @@ public class WeaponScreen extends BaseScreen
                             WeaponScreen.this.showMainShake(n6);
                             if (WeaponScreen.this.helpBoard != null) {
                                 WeaponScreen.this.helpBoard.remove();
-                                WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+//                                WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+                                WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, Language.battleStart(), -1, 1);
                                 return;
                             }
                             return;
@@ -405,7 +406,8 @@ public class WeaponScreen extends BaseScreen
                         WeaponScreen.this.showMainShake(int2);
                         if (WeaponScreen.this.helpBoard != null && WeaponScreen.this.helpBoard.insStep == 62) {
                             WeaponScreen.this.helpBoard.remove();
-                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+//                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, Language.battleStart(), -1, 1);
                         }
                     }
                 }
@@ -493,7 +495,8 @@ public class WeaponScreen extends BaseScreen
                         WeaponScreen.this.selectSubImg((WeaponItem)listenerActor);
                         if (WeaponScreen.this.helpBoard != null && WeaponScreen.this.helpBoard.insStep == 92) {
                             WeaponScreen.this.helpBoard.remove();
-                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+//                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, "Battle start!", -1, 1);
+                            WeaponScreen.this.helpBoard = HelpBoard.createHelpBoard(WeaponScreen.this.stage, WeaponScreen.this.imgPlay, Language.battleStart(), -1, 1);
                         }
                     }
                 }
@@ -809,14 +812,16 @@ public class WeaponScreen extends BaseScreen
         }
         else {
             if (insStep == 62) {
-                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupProba, "Equip this powerful weapon \nfor every 30 minutes!", 1, 1);
+//                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupProba, "Equip this powerful weapon \nfor every 30 minutes!", 1, 1);
+                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.groupProba, Language.equipWeapon(), 1, 1);
                 this.helpBoard.imgHand.clearActions();
                 this.helpBoard.imgHand.addAction(Actions.forever(Actions.sequence(Actions.delay(0.3f), Actions.moveTo(this.arrMainSelect.size * 92 + 245, -35.0f, 1.2f), Actions.delay(0.2f), Actions.moveTo(68.0f, 100.0f, 0.6f))));
                 this.helpBoard.insStep = insStep;
                 return;
             }
             if (insStep == 91) {
-                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgSubMark, "Touch to switch to \nlight weapon label!", 1, -1);
+//                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgSubMark, "Touch to switch to \nlight weapon label!", 1, -1);
+                this.helpBoard = HelpBoard.createHelpBoard(this.stage, this.imgSubMark, Language.touchToLightLabel(), 1, -1);
                 this.helpBoard.insStep = insStep;
                 return;
             }

@@ -27,7 +27,7 @@ public class Language {
 	}
 	
 	public static String tapToSwitchWeapon () {
-		String[] str = {"Tap to switch weapon!", "点击继续"};
+		String[] str = {"Tap to switch weapon!", "选择武器"};
 		return str[idx];
 	}
 	
@@ -106,6 +106,40 @@ public class Language {
 	public static String tapToNextLv () {
 		String[] str = {"Next level!",
 				"开始下关"};
+		return str[idx];
+	}
+	
+	public static String chooseStoreWeapon () {
+		String[] str = {"Choose store of weapon!",
+		"选择武器商店"};
+		return str[idx];
+	}
+	
+	public static String touchToBuyWeapon () {
+		String[] str = {"Touch to buy a new weapon!", 
+				"购买武器"};
+		return str[idx];
+	}
+	
+	public static String tapToReturn () {
+		String[] str = {"Return!", "返回"};
+		return str[idx];
+	}
+	
+	public static String equipWeapon () {
+		String[] str = {"Equip this powerful weapon \nfor every 30 minutes!", 
+				"装备这个强大的\n武器30分钟"};
+		return str[idx];
+	}
+	
+	public static String touchToLightLabel () {
+		String[] str = {"Touch to switch to \nlight weapon label!",
+				"选择轻武器"};
+		return str[idx];
+	}
+	
+	public static String battleStart () {
+		String[] str = {"Battle start!", "开始战斗"};
 		return str[idx];
 	}
 }

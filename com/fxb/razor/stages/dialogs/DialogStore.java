@@ -423,7 +423,9 @@ public class DialogStore extends BaseDialog
                 if (this.helpBoard != null) {
                     this.helpBoard.remove();
                 }
-                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgWeapon, "Choose store of weapon!", 1, 1);
+//                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgWeapon, "Choose store of weapon!", 1, 1);
+                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgWeapon, Language.chooseStoreWeapon(), 1, 1);
+                
                 this.helpBoard.insStep = insStep;
             }
             else if (insStep == 43) {
@@ -434,14 +436,16 @@ public class DialogStore extends BaseDialog
                 tempTarget.setPosition(144.0f, 215.0f);
                 tempTarget.addListener(this.panListener);
                 this.addActor(tempTarget);
-                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), tempTarget, "Touch to buy a new weapon!", 1, -1);
+//                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), tempTarget, "Touch to buy a new weapon!", 1, -1);
+                this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), tempTarget, Language.touchToBuyWeapon(), 1, -1);
                 this.helpBoard.tempTarget = tempTarget;
                 this.helpBoard.insStep = insStep;
             }
         }
         if (insStep == 44 && this.helpBoard != null && this.helpBoard.insStep == 43) {
             this.helpBoard.remove();
-            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgClose, "Return!", -1, -1);
+//            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgClose, "Return!", -1, -1);
+            this.helpBoard = HelpBoard.createDialogBoard(this.getStage(), this.imgClose, Language.tapToReturn(), -1, -1);
             this.helpBoard.insStep = insStep;
         }
     }

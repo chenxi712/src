@@ -27,7 +27,7 @@ public class Language {
 	}
 	
 	public static String tapToSwitchWeapon () {
-		String[] str = {"Tap to switch weapon!", "选择武器"};
+		String[] str = {"Tap to switch weapon!", "选择英雄"};
 		return str[idx];
 	}
 	
@@ -75,19 +75,19 @@ public class Language {
 	
 	public static String tapUpgradeGun () {
 		String[] str = {"Tap to upgrade \nmachine-gun!",
-				"点击升级武器"};
+				"点击升级英雄"};
 		return str[idx];
 	}
 	
 	public static String tapAndSelectWeapon () {
 		String[] str = {"Tap and hold to select the \nweapon!",
-				"点击并拖动来\n选择武器"};
+				"点击并拖动来\n选择英雄"};
 		return str[idx];
 	}
 	
 	public static String tapAndRemoveWeapon () {
 		String[] str = {"Tap and hold to remove the \nweapon!",
-				"点击并拖动来\n移除武器"};
+				"点击并拖动来\n移除英雄"};
 		return str[idx];
 	}
 	
@@ -111,13 +111,13 @@ public class Language {
 	
 	public static String chooseStoreWeapon () {
 		String[] str = {"Choose store of weapon!",
-		"选择武器商店"};
+		"选择英雄商店"};
 		return str[idx];
 	}
 	
 	public static String touchToBuyWeapon () {
 		String[] str = {"Touch to buy a new weapon!", 
-				"购买武器"};
+				"购买英雄"};
 		return str[idx];
 	}
 	
@@ -128,13 +128,13 @@ public class Language {
 	
 	public static String equipWeapon () {
 		String[] str = {"Equip this powerful weapon \nfor every 30 minutes!", 
-				"装备这个强大的\n武器30分钟"};
+				"装备这个强大的\n英雄30分钟"};
 		return str[idx];
 	}
 	
 	public static String touchToLightLabel () {
 		String[] str = {"Touch to switch to \nlight weapon label!",
-				"选择轻武器"};
+				"选择雇佣兵"};
 		return str[idx];
 	}
 	
@@ -175,7 +175,7 @@ public class Language {
 	
 	public static String toBuyWeapon () {
 		String[] str = {"Do you want to spend 100 diamond to buy \nthe weapon?",
-				"要花100个钻石买武器吗？"};
+				"要花100个钻石买英雄吗？"};
 		return str[idx];
 	}
 	

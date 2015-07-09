@@ -27,7 +27,7 @@ public class StartScreen extends BaseScreen
     MyImage imgEndless;
     MyImage imgFlag;
     MyImage imgLoginReward;
-    MyImage imgLogo;
+//    MyImage imgLogo;
     MyImage imgMore;
     MyImage imgRate;
     MyImage imgSpeSold;
@@ -94,7 +94,7 @@ public class StartScreen extends BaseScreen
         UiHandle.addItem(this.stage.getRoot(), this.atlasStartBg, "qianjing", 0.0f, 0.0f);
         this.initFlag();
 //        UiHandle.addItem(this.stage.getRoot(), this.atlasStartBg, "mengban", 0.0f, 0.0f);
-        (this.imgLogo = UiHandle.addItem(this.stage.getRoot(), this.atlasStart, "logo", 7.0f, 340.0f)).setY(630.0f);
+//        (this.imgLogo = UiHandle.addItem(this.stage.getRoot(), this.atlasStart, "logo", 7.0f, 340.0f)).setY(630.0f);
         this.imgMore = UiHandle.addItem(this.stage.getRoot(), this.atlasStart, "more", 13.0f, 13.0f, this.btnListener);
         this.imgStory = UiHandle.addItem(this.stage.getRoot(), this.atlasStart, "story", 610.0f, 13.0f, this.btnListener);
         (this.imgEndless = UiHandle.addItem(this.stage.getRoot(), this.atlasStart, "endless", 410.0f, 13.0f, this.btnListener)).setVisible(Global.maxGameLevelEasy > 10);
@@ -110,17 +110,25 @@ public class StartScreen extends BaseScreen
         this.imgMore.setY(-200.0f);
         this.imgStory.setY(-200.0f);
         this.imgEndless.setY(-200.0f);
-        this.imgLogo.addAction(Actions.sequence(Actions.moveTo(7.0f, 340.0f, 0.7f, MyInterpolation.shake1), Actions.run(new Runnable() {
-            @Override
-            public void run() {
-                StartScreen.this.imgSpeSold.addAction(Actions.moveTo(580.0f, 403.0f, 0.5f, Interpolation.swingOut));
-                StartScreen.this.imgLoginReward.addAction(Actions.moveTo(653.0f, 403.0f, 0.5f, Interpolation.swingOut));
-                StartScreen.this.imgRate.addAction(Actions.moveTo(725.0f, 403.0f, 0.5f, Interpolation.swingOut));
-                StartScreen.this.imgMore.addAction(Actions.moveTo(13.0f, 13.0f, 0.5f, Interpolation.swingOut));
-                StartScreen.this.imgStory.addAction(Actions.moveTo(610.0f, 13.0f, 0.5f, Interpolation.swingOut));
-                StartScreen.this.imgEndless.addAction(Actions.moveTo(410.0f, 13.0f, 0.5f, Interpolation.swingOut));
-            }
-        })));
+//        this.imgLogo.addAction(Actions.sequence(Actions.moveTo(7.0f, 340.0f, 0.7f, MyInterpolation.shake1), Actions.run(new Runnable() {
+//            @Override
+//            public void run() {
+//                StartScreen.this.imgSpeSold.addAction(Actions.moveTo(580.0f, 403.0f, 0.5f, Interpolation.swingOut));
+//                StartScreen.this.imgLoginReward.addAction(Actions.moveTo(653.0f, 403.0f, 0.5f, Interpolation.swingOut));
+//                StartScreen.this.imgRate.addAction(Actions.moveTo(725.0f, 403.0f, 0.5f, Interpolation.swingOut));
+//                StartScreen.this.imgMore.addAction(Actions.moveTo(13.0f, 13.0f, 0.5f, Interpolation.swingOut));
+//                StartScreen.this.imgStory.addAction(Actions.moveTo(610.0f, 13.0f, 0.5f, Interpolation.swingOut));
+//                StartScreen.this.imgEndless.addAction(Actions.moveTo(410.0f, 13.0f, 0.5f, Interpolation.swingOut));
+//            }
+//        })));
+        
+        StartScreen.this.imgSpeSold.addAction(Actions.moveTo(580.0f, 403.0f, 0.5f, Interpolation.swingOut));
+        StartScreen.this.imgLoginReward.addAction(Actions.moveTo(653.0f, 403.0f, 0.5f, Interpolation.swingOut));
+        StartScreen.this.imgRate.addAction(Actions.moveTo(725.0f, 403.0f, 0.5f, Interpolation.swingOut));
+        StartScreen.this.imgMore.addAction(Actions.moveTo(13.0f, 13.0f, 0.5f, Interpolation.swingOut));
+        StartScreen.this.imgStory.addAction(Actions.moveTo(610.0f, 13.0f, 0.5f, Interpolation.swingOut));
+        StartScreen.this.imgEndless.addAction(Actions.moveTo(410.0f, 13.0f, 0.5f, Interpolation.swingOut));
+        
         this.dialogExit = new DialogExit(this);
         this.mondLackDialog = new MondLackDialog(this);
         this.dialogSpeSold = new DialogSpeSold(this, this.mondLackDialog);

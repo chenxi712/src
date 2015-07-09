@@ -12,7 +12,7 @@ public class DialogSet extends BaseDialog
     TextureAtlas atlasLevelSelect;
     private ButtonListener btnListener;
     DialogCredits dialogCredits;
-    MyImage imgCredits;
+//    MyImage imgCredits;
     MyImage imgOption;
     MyImage imgVoice;
     MyImage imgVoiceBg;
@@ -70,10 +70,10 @@ public class DialogSet extends BaseDialog
                 if (this.isDown) {
                     final Actor listenerActor = inputEvent.getListenerActor();
                     SoundHandle.playForButton2();
-                    if (listenerActor == DialogSet.this.imgCredits) {
-                        DialogHandle.openDialog(DialogSet.this.getStage(), DialogSet.this.dialogCredits);
-                        return;
-                    }
+//                    if (listenerActor == DialogSet.this.imgCredits) {
+//                        DialogHandle.openDialog(DialogSet.this.getStage(), DialogSet.this.dialogCredits);
+//                        return;
+//                    }
                     if (listenerActor == DialogSet.this.imgClose) {
                         DialogHandle.closeDialog(DialogSet.this, 0.35f);
                     }
@@ -83,12 +83,12 @@ public class DialogSet extends BaseDialog
         this.atlasLevelSelect = Global.manager.get("ui/ui_level_select.pack", TextureAtlas.class);
         this.imgBg = this.addItem(this, Assets.atlasPauseOver, "waikuang", 0.0f, -1.0f);
         this.initClose(this.btnListener);
-        this.imgVoiceBg = this.addItem(this, Assets.atlasPauseOver, "shengyinkuang", 42.0f, 114.0f);
-        this.imgVoice = this.addItem(this, Assets.atlasPauseOver, "shengyin", 51.0f, 129.0f);
-        this.imgVoiceSlider = this.addItem(this, Assets.atlasPauseOver, "shengyintiao", 108.0f, 137.0f, this.voicelistener);
-        this.imgVoiceIndicator = this.addItem(this, Assets.atlasPauseOver, "huadong", 135.0f, 137.0f, this.voicelistener);
+        this.imgVoiceBg = this.addItem(this, Assets.atlasPauseOver, "shengyinkuang", 42.0f, 80.0f);
+        this.imgVoice = this.addItem(this, Assets.atlasPauseOver, "shengyin", 51.0f, 95.0f);
+        this.imgVoiceSlider = this.addItem(this, Assets.atlasPauseOver, "shengyintiao", 108.0f, 103.0f, this.voicelistener);
+        this.imgVoiceIndicator = this.addItem(this, Assets.atlasPauseOver, "huadong", 135.0f, 103.0f, this.voicelistener);
         this.addItem(this, this.atlasLevelSelect, "option", 26.0f, 196.0f);
-        this.imgCredits = this.addItem(this, this.atlasLevelSelect, "credits", 135.0f, 42.0f, this.btnListener);
+//        this.imgCredits = this.addItem(this, this.atlasLevelSelect, "credits", 135.0f, 42.0f, this.btnListener);
         this.dialogCredits = new DialogCredits();
         this.setSizeOrigin();
         this.setVoicePosition();

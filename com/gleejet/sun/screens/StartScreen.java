@@ -213,6 +213,32 @@ public class StartScreen extends BaseScreen
     
     public void moreHandle() {
         PlatformHandle.showMore();
+        Global.arrMainGunGet.add("Scatter");
+        Global.arrMainGunGet.add("Flame");
+        Global.arrMainGunGet.add("Laser");
+        Global.arrMainGunGet.add("Electricity");
+        Global.arrMainGunGet.add("DoublePipe");
+        Global.arrMainGunGet.add("Acid");
+        Global.arrMainGunGet.add("Freezefog");
+        Global.arrMainGunGet.add("Missile");
+        Global.arrMainGunGet.add("Track");
+        Global.arrMainGunGet.add("Shock");
+        Global.arrMainGunGet.add("Leap");
+        
+        Global.arrSubGunGet.add("Pastor");
+        Global.arrSubGunGet.add("Twine");
+        Global.arrSubGunGet.add("Drum");
+        Global.arrSubGunGet.add("Shield");
+        Global.arrSubGunGet.add("Subcan");
+        Global.arrSubGunGet.add("Bomb");
+        Global.arrSubGunGet.add("Invince");
+        //Scatter Flame Laser Electricity DoublePipe Acid Freezefog Missile Track Shock Leap
+        //Pastor Twine Drum Shield Subcan Bomb Invince
+        PreferHandle.checkSame(Global.arrMainGunGet);
+        PreferHandle.checkSame(Global.arrSubGunGet);
+        PreferHandle.writeWeaponGet();
+//        DialogGiftBox gift = new DialogGiftBox(this);
+//        gift.openDialog(this.stage);
     }
     
     public void openStore(final int n) {

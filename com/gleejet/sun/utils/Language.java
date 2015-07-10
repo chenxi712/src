@@ -188,4 +188,39 @@ public class Language {
 		String[] str = {"Diamond is not enough. Would \nyou like to buy more?", "钻石不足，\n去获取更多钻石？"};
 		return str[idx];
 	}
+	
+	public static String get500Gold() {
+		String[] str = {"Congratulations, You can get \n500 gold!", "恭喜，获得500\n个金币奖励！"};
+		return str[idx];
+	}
+	
+	public static String getGold1() {
+		String[] str = {"Congratulations, You can get \n", "恭喜，获得"};
+		return str[idx];
+	}
+	
+	public static String getGold2() {
+		String[] str = {" golds!", "\n个金币奖励！"};
+		return str[idx];
+	}
+	
+	public static String get500Mond() {
+		String[] str = {"Congratulations, You can get \n500 diamonds!", "恭喜，获得500\n个钻石奖励！"};
+		return str[idx];
+	}
+	
+	public static String getMond1() {
+		String[] str = {"Congratulations, You can get \n", "恭喜，获得"};
+		return str[idx];
+	}
+	
+	public static String getMond2() {
+		String[] str = {" diamonds!", "\n个钻石奖励！"};
+		return str[idx];
+	}
+	
+	public static String unlocked() {
+		String[] str = {"Unlocked", "已升级"};
+		return str[idx];
+	}
 }

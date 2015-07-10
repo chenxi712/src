@@ -752,7 +752,8 @@ public class WeaponEnhanceScreen extends BaseScreen
             this.coinNum = 1234;
             this.imgBg = UiHandle.addItem(this, WeaponEnhanceScreen.this.atlasEnhance, "anniu", 0.0f, 0.0f);
             this.labelCoin = MyLabel.createLabel(this, StrHandle.get("1234"), 67.0f, 27.0f);
-            this.labelUnlock = UiHandle.createRomanLabel(this, StrHandle.get("Unlocked"), 58.0f, 25.0f);
+//            this.labelUnlock = UiHandle.createRomanLabel(this, StrHandle.get("Unlocked"), 58.0f, 25.0f);
+            this.labelUnlock = UiHandle.createRomanLabel(this, Language.unlocked(), 58.0f, 25.0f);
             this.setSize(this.imgBg.getWidth(), this.imgBg.getHeight());
             this.setPosition(644.0f, 5.0f);
             this.addListener(WeaponEnhanceScreen.this.btnListener);

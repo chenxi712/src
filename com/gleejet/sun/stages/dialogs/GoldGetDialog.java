@@ -50,7 +50,8 @@ public class GoldGetDialog extends BaseDialog
         this.atlasLevelBg = Global.manager.get("ui/ui_level_bg.pack", TextureAtlas.class);
         this.imgBg = this.addItem(this, this.atlasLevelBg, "waikuang", 0.0f, 0.0f);
         this.initClose(this.btnListener);
-        this.labelInfo = UiHandle.createRomanLabel(this, "Congratulations, You can get \n500 gold!", 50.0f, 85.0f);
+//        this.labelInfo = UiHandle.createRomanLabel(this, "Congratulations, You can get \n500 gold!", 50.0f, 85.0f);
+        this.labelInfo = UiHandle.createRomanLabel(this, Language.get500Gold(), 50.0f, 85.0f);
         this.imgYes = UiHandle.addItem(this, this.atlasStore, "yes", 118.0f, 25.0f, this.btnListener);
         this.setSizeOrigin();
     }
@@ -77,6 +78,7 @@ public class GoldGetDialog extends BaseDialog
     public void setGoldLevel(final int goldLevel) {
         this.goldLevel = goldLevel;
         this.goldNum = GoldGetDialog.goldss[Global.sceneLevel - 1][this.goldLevel - 1];
-        this.labelInfo.setText(StrHandle.get("Congratulations, You can get \n", this.goldNum, " golds!"));
+//        this.labelInfo.setText(StrHandle.get("Congratulations, You can get \n", this.goldNum, " golds!"));
+        this.labelInfo.setText(StrHandle.get(Language.getGold1(), this.goldNum, Language.getGold2()));
     }
 }

@@ -190,7 +190,7 @@ public class Language {
 	}
 	
 	public static String get500Gold() {
-		String[] str = {"Congratulations, You can get \n500 gold!", "恭喜，获得500\n个金币奖励！"};
+		String[] str = {"Congratulations, You can get \n500 gold!", "恭喜，获得500个金币奖励！"};
 		return str[idx];
 	}
 	
@@ -200,12 +200,12 @@ public class Language {
 	}
 	
 	public static String getGold2() {
-		String[] str = {" golds!", "\n个金币奖励！"};
+		String[] str = {" golds!", "个金币奖励！"};
 		return str[idx];
 	}
 	
 	public static String get500Mond() {
-		String[] str = {"Congratulations, You can get \n500 diamonds!", "恭喜，获得500\n个钻石奖励！"};
+		String[] str = {"Congratulations, You can get \n500 diamonds!", "恭喜，获得500个钻石奖励！"};
 		return str[idx];
 	}
 	
@@ -215,7 +215,7 @@ public class Language {
 	}
 	
 	public static String getMond2() {
-		String[] str = {" diamonds!", "\n个钻石奖励！"};
+		String[] str = {" diamonds!", "个钻石奖励！"};
 		return str[idx];
 	}
 	

@@ -428,6 +428,7 @@ public class Control
         Global.manager.load("ui/ui_weapon_enhance.pack", TextureAtlas.class);
         Global.manager.load("ui/ui_hero.pack", TextureAtlas.class);
         Global.manager.load("ui/ui_enemy_kill.pack", TextureAtlas.class);
+        Global.manager.load("ui/ui_libao.pack", TextureAtlas.class);
     }
     
     public static void loadForStart() {
@@ -690,6 +691,7 @@ public class Control
         Global.manager.unload("ui/ui_weapon_enhance.pack");
         Global.manager.unload("ui/ui_hero.pack");
         Global.manager.unload("ui/ui_enemy_kill.pack");
+        Global.manager.unload("ui/ui_libao.pack");
     }
     
     public static void unloadForStart() {

@@ -22,6 +22,7 @@ public class Assets
   public static TextureAtlas atlasStore;
   public static TextureAtlas atlasUiGame;
   public static TextureAtlas atlasWeaponSelect;
+  public static TextureAtlas atlasLibao;
   public static BitmapFont fontMs14 = null;
   public static BitmapFont fontMs16;
   public static BitmapFont fontKT14;
@@ -40,6 +41,7 @@ public class Assets
     atlasPipeTrace = null;
     atlasStore = null;
     atlasBossBullet = null;
+    atlasLibao = null;
     jsonProperty = null;
     jsonEnhance = null;
     jsonWeapon = null;
@@ -84,6 +86,7 @@ public class Assets
     atlasNumber = (TextureAtlas)Global.manager.get("data/number.pack", TextureAtlas.class);
     atlasInstruction = (TextureAtlas)Global.manager.get("data/instruction.pack", TextureAtlas.class);
     atlasStart = (TextureAtlas)Global.manager.get("ui/ui_start.pack", TextureAtlas.class);
+    atlasLibao = (TextureAtlas)Global.manager.get("ui/ui_libao.pack", TextureAtlas.class);
     fontMs16 = (BitmapFont)Global.manager.get("font/msb15.fnt", BitmapFont.class);
     fontMs14 = (BitmapFont)Global.manager.get("font/msb14.fnt", BitmapFont.class);
     fontKT14 = (BitmapFont)Global.manager.get("font/kt14.fnt", BitmapFont.class);

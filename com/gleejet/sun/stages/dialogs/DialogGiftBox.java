@@ -19,8 +19,12 @@ public class DialogGiftBox extends BaseDialog
 {
 	private ButtonListener btnListener;
 	private TextureAtlas atlasStart;
+	private TextureAtlas atlasLibao;
+	private TextureAtlas atlasLevelBg;
 	private MyImage[] imgItems;
 	private MyImage imgBuy;
+	private MyImage imgTitleBg;
+	private MyImage imgTitle;
 	
 	public DialogGiftBox (BaseScreen baseScreen) {
 		this.btnListener = new ButtonListener() {
@@ -44,10 +48,13 @@ public class DialogGiftBox extends BaseDialog
 	
 	private void init() {
 		 this.atlasStart = Global.manager.get("ui/ui_start.pack", TextureAtlas.class);
+		 this.atlasLibao = Global.manager.get("ui/ui_libao.pack", TextureAtlas.class);
+		 this.atlasLevelBg = Global.manager.get("ui/ui_level_bg.pack", TextureAtlas.class);
 	     this.imgBg = this.addItem(this, this.atlasStart, "waikuang", 0.0f, 0.0f);
-	     imgBg.setScale(2f);
-	     imgBuy = this.addItem(this, this.atlasStart, "receive_on", 286, 47);
+	     imgBuy = this.addItem(this, this.atlasLibao, "lingqu", 450, 0);
 	     imgBuy.addListener(this.btnListener);
+	     imgTitleBg = this.addItem(this, this.atlasLevelBg, "hengfu1", 170, 250);
+	     imgTitle = this.addItem(this, this.atlasLibao, "libao_biaoti", 286, 278);
 		 this.initClose(this.btnListener);
 		 this.setPosition(61.0f, 80.0f);
 	     this.setSizeOrigin();

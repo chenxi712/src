@@ -1074,6 +1074,13 @@ public class WeaponScreen extends BaseScreen
     }
     
     private void playHandle() {
+    	if (Global.gameCount > 0 && Global.gameCount % 4 == 0 && DialogGiftBox.HasGifts() > 0) {
+    		DialogGiftBox gift = new DialogGiftBox(this);
+    		gift.openDialog(this.stage);
+    		return;
+    	}
+    	++Global.gameCount;
+    	
         this.writeConfig();
         if (this.arrMainSelect.size > 0) {
             Global.gameState = Constant.GameState.Game_On;

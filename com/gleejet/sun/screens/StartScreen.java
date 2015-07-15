@@ -246,8 +246,8 @@ public class StartScreen extends BaseScreen
 //        PreferHandle.checkSame(Global.arrSubGunGet);
 //        PreferHandle.writeWeaponGet();
         
-        DialogGiftBox gift = new DialogGiftBox(this);
-        gift.openDialog(this.stage);
+//        DialogGiftBox gift = new DialogGiftBox(this);
+//        gift.openDialog(this.stage);
     }
     
     public void openStore(final int n) {

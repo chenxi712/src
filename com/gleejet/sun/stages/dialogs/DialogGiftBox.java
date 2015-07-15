@@ -22,6 +22,7 @@ import com.gleejet.sun.common.PreferHandle;
 import com.gleejet.sun.common.SoundHandle;
 import com.gleejet.sun.common.UiHandle;
 import com.gleejet.sun.screens.BaseScreen;
+import com.gleejet.sun.screens.LevelSmallScreen;
 import com.gleejet.sun.screens.WeaponEnhanceScreen;
 import com.gleejet.sun.screens.WeaponScreen;
 import com.gleejet.sun.utils.ButtonListener;
@@ -47,6 +48,7 @@ public class DialogGiftBox extends BaseDialog
 	TextureAtlas atlasEnhance;
 	TextureAtlas atlasWeaponBg;
 	TextureAtlas atlasStore;
+	BaseScreen baseScreen;
 	
 	static {
         strMains = Constant.strMains;
@@ -54,6 +56,7 @@ public class DialogGiftBox extends BaseDialog
     }
 	
 	public DialogGiftBox (BaseScreen baseScreen) {
+		this.baseScreen = baseScreen;
 		this.btnListener = new ButtonListener() {
             @Override
             public void touchUp(final InputEvent inputEvent, final float n, final float n2, final int n3, final int n4) {
@@ -86,6 +89,7 @@ public class DialogGiftBox extends BaseDialog
 		 imgBuy.addListener(this.btnListener);
 		 this.addItem(this, this.atlasLevelBg, "hengfu1", 170, 250);
 		 this.addItem(this, this.atlasLibao, "libao_biaoti", 286, 278);
+		 this.addItem(this, this.atlasLibao, "gift_tip", 350, 120);
 		 this.initClose(this.btnListener);
 		 this.setPosition(61.0f, 80.0f);
 		 this.setSizeOrigin();
@@ -93,6 +97,13 @@ public class DialogGiftBox extends BaseDialog
 	
 	public void close() {
 		DialogHandle.closeDialog(this, 0.35f);
+    }
+	
+	@Override
+    public void afterClose() {
+        if (this.baseScreen instanceof WeaponScreen) {
+            ((WeaponScreen)this.baseScreen).refreshWeapon();
+        }
     }
 	
 	public void openDialog(Stage stage) {
@@ -105,6 +116,7 @@ public class DialogGiftBox extends BaseDialog
         PreferHandle.checkSame(Global.arrMainGunGet);
         PreferHandle.writeWeaponGet();
         PreferHandle.writeCommon();
+        close();
 	}
 	
 	//SinglePipe Cannon Scatter Flame Laser Electricity DoublePipe Acid Freezefog Missile Track Shock Leap

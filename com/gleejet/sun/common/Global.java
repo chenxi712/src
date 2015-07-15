@@ -120,6 +120,7 @@ public class Global
     public static int totalEnemy;
     public static float totalMondNum;
     public static float tranLength;
+    public static int gameCount = 0;
     
     static {
         Global.maxGameLevelEasy = 45;

@@ -13,6 +13,7 @@ import com.gleejet.sun.utils.action.*;
 import com.gleejet.sun.utils.ui.*;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.math.*;
+import com.bx.pay.BXPay;
 
 public class DialogStore extends BaseDialog
 {
@@ -136,6 +137,7 @@ public class DialogStore extends BaseDialog
                     }
                     Runnable purchaseOkCallback;
                     for (i = 0; i < DialogStore.this.groupMonds.length; ++i) {
+                    	// TODO: add purchase sdk
                         if (listenerActor == DialogStore.this.groupMonds[i]) {
                             purchaseOkCallback = new Runnable() {
                                 @Override
@@ -261,6 +263,7 @@ public class DialogStore extends BaseDialog
                     }
                     Runnable purchaseOkCallback;
                     for (i = 0; i < DialogStore.this.groupMonds.length; ++i) {
+                    	// TODO: add purchase sdk
                         if (listenerActor == DialogStore.this.groupMonds[i]) {
                             purchaseOkCallback = new Runnable() {
                                 @Override
@@ -379,7 +382,9 @@ public class DialogStore extends BaseDialog
                     }
                     Runnable purchaseOkCallback;
                     for (i = 0; i < DialogStore.this.groupMonds.length; ++i) {
+                    	// TODO: add purchase sdk
                         if (listenerActor == DialogStore.this.groupMonds[i]) {
+                        	MainActivity.buyGoods(i);
                             purchaseOkCallback = new Runnable() {
                                 @Override
                                 public void run() {

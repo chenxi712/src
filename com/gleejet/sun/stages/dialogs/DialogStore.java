@@ -145,8 +145,9 @@ public class DialogStore extends BaseDialog
                                     DialogStore.this.coinMondChange();
                                 }
                             };
-                            PlatformHandle.buyGoods(i);
-                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
+                            MainActivity.pay(i, purchaseOkCallback);
+//                            PlatformHandle.buyGoods(i);
+//                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
                             return;
                         }
                     }
@@ -271,8 +272,9 @@ public class DialogStore extends BaseDialog
                                     DialogStore.this.coinMondChange();
                                 }
                             };
-                            PlatformHandle.buyGoods(i);
-                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
+                            MainActivity.pay(i, purchaseOkCallback);
+//                            PlatformHandle.buyGoods(i);
+//                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
                             return;
                         }
                     }
@@ -384,15 +386,15 @@ public class DialogStore extends BaseDialog
                     for (i = 0; i < DialogStore.this.groupMonds.length; ++i) {
                     	// TODO: add purchase sdk
                         if (listenerActor == DialogStore.this.groupMonds[i]) {
-                        	MainActivity.buyGoods(i);
                             purchaseOkCallback = new Runnable() {
                                 @Override
                                 public void run() {
                                     DialogStore.this.coinMondChange();
                                 }
                             };
-                            PlatformHandle.buyGoods(i);
-                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
+                        	MainActivity.pay(i, purchaseOkCallback);
+//                            PlatformHandle.buyGoods(i);
+//                            PlatformHandle.setPurchaseOkCallback(purchaseOkCallback);
                             return;
                         }
                     }
